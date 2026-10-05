@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CESC — GPS Tracking Module | Rakiba Chowdhury</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Segoe UI", Arial, sans-serif; background: #f7f9f8; color: #1f2d27; line-height: 1.6; }
+  .container { max-width: 800px; margin: 0 auto; padding: 40px 24px; }
+  a.back { color: #1aa36f; text-decoration: none; font-weight: 600; }
+  header { margin: 20px 0 30px; }
+  header h1 { color: #0d3d2e; font-size: 1.8em; margin-bottom: 6px; }
+  header p.meta { color: #6b8f80; font-size: 0.95em; }
+  section { margin-bottom: 32px; }
+  section h2 { color: #0d3d2e; font-size: 1.2em; margin-bottom: 12px; border-bottom: 2px solid #d4e5dc; padding-bottom: 6px; }
+  ul { padding-left: 20px; margin-top: 8px; }
+  li { margin-bottom: 6px; }
+  .stack { background: white; border: 1px solid #e0ebe5; border-radius: 8px; padding: 14px 18px; font-size: 0.9em; color: #3d5a4d; }
+  img { max-width: 100%; border: 1px solid #e0ebe5; border-radius: 8px; margin: 12px 0; }
+  .caption { font-size: 0.85em; color: #6b8f80; margin-bottom: 20px; }
+  .note { background: #fff8e6; border: 1px solid #f0dca0; border-radius: 8px; padding: 14px 18px; font-size: 0.9em; color: #7a5c1e; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to projects</a>
+
+  <header>
+    <h1>Campus E-scooter Sharing CoOp (CESC) — GPS Tracking Module</h1>
+    <p class="meta">Team project · CST8288 · Sep–Dec 2025</p>
+  </header>
+
+  <section>
+    <h2>Overview</h2>
+    <p>A 3-tier web application built for a simulated Algonquin Students Association e-scooter sharing program — tracking real-time scooter locations, energy usage, and maintenance across campus. Built by a 5-person team using Java Servlets, JSP, MySQL, and Tomcat, with each member independently owning a full feature vertical (view, business logic, and data access layers).</p>
+  </section>
+
+  <section>
+    <h2>My Role</h2>
+    <p>I independently designed and built the GPS Tracking module (FR-03) end to end — the presentation, business logic, and data access layers for real-time scooter location tracking.</p>
+    <ul>
+      <li>Built ride start/end logic with validation, including automatic <strong>ride-abandonment detection</strong> based on elapsed time thresholds</li>
+      <li>Implemented distance-between-stations calculation and per-scooter usage statistics (total distance, ride counts, time in use)</li>
+      <li>Applied the <strong>DAO pattern</strong> to separate data access from business logic, and a <strong>Singleton</strong> for centralized database connection management</li>
+      <li>Designed and built the tracking dashboard UI — live status table, summary stat cards, and ride-history views</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Architecture</h2>
+    <img src="../assets/images/cesc/class-diagram.png" alt="FR-03 GPS Tracking class diagram showing presentation, business, and data access layers">
+    <p class="caption">Class diagram showing the layered architecture, DAO pattern, and Singleton database connection.</p>
+  </section>
+
+  <section>
+    <h2>How It Works</h2>
+    <img src="../assets/images/cesc/sequence-start-ride.png" alt="Sequence diagram for starting a ride">
+    <p class="caption">Starting a ride: validates the scooter is available, confirms the station, and logs the new ride.</p>
+    <img src="../assets/images/cesc/sequence-end-ride.png" alt="Sequence diagram for ending a ride">
+    <p class="caption">Ending a ride: calculates duration and distance, and flags rides exceeding the abandonment threshold.</p>
+  </section>
+
+  <section>
+    <h2>Tech Stack</h2>
+    <p class="stack">Java · Java Servlets · JSP · JDBC · MySQL · Tomcat · Maven</p>
+  </section>
+
+  <section>
+    <p class="note">Built as one of five feature verticals in a team project. Full source isn't public since it includes teammates' code — the diagrams and description above reflect my individually authored module (FR-03).</p>
+  </section>
+
+</div>
+</body>
+</html>
