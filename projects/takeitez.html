@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TakeItEZ — Medication Management App | Rakiba Chowdhury</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Segoe UI", Arial, sans-serif; background: #f7f9f8; color: #1f2d27; line-height: 1.6; }
+  .container { max-width: 800px; margin: 0 auto; padding: 40px 24px; }
+  a.back { color: #1aa36f; text-decoration: none; font-weight: 600; }
+  header { margin: 20px 0 30px; }
+  header h1 { color: #0d3d2e; font-size: 1.8em; margin-bottom: 6px; }
+  header p.meta { color: #6b8f80; font-size: 0.95em; }
+  section { margin-bottom: 32px; }
+  section h2 { color: #0d3d2e; font-size: 1.2em; margin-bottom: 12px; border-bottom: 2px solid #d4e5dc; padding-bottom: 6px; }
+  section p + p { margin-top: 12px; }
+  ul { padding-left: 20px; margin-top: 8px; }
+  li { margin-bottom: 6px; }
+  .stack { background: white; border: 1px solid #e0ebe5; border-radius: 8px; padding: 14px 18px; font-size: 0.9em; color: #3d5a4d; }
+  .note { background: #fff8e6; border: 1px solid #f0dca0; border-radius: 8px; padding: 14px 18px; font-size: 0.9em; color: #7a5c1e; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to projects</a>
+
+  <header>
+    <h1>TakeItEZ — Medication Management App</h1>
+    <p class="meta">Capstone project · Flutter · May–Aug 2026</p>
+  </header>
+
+  <section>
+    <p class="note">This was a real client project completed under a non-disclosure agreement. Screenshots, source code and client details are not shared. This page describes my contribution only.</p>
+  </section>
+
+  <section>
+    <h2>Overview</h2>
+    <p>A cross-platform mobile app that helps patients and caregivers manage medications, built with Flutter as a capstone project for a real client. The team worked from client requirements through to a working app, with regular client meetings and feedback along the way.</p>
+  </section>
+
+  <section>
+    <h2>My Role</h2>
+    <p>I worked on the user interface of two features, and shared the team's design documentation and planning work.</p>
+    <ul>
+      <li>Built the <strong>Drug Information screen</strong>: a search box with suggestions as the user types, and a drug profile view showing ingredients, dosage form and route of administration, designed with the client to present side effects and warnings in a calm, patient-friendly way</li>
+      <li>Added "View Full Information" buttons that open the official Health Canada and FDA pages in the phone's browser</li>
+      <li>Built the <strong>Health Diary screens</strong> for logging symptoms, side effects and mood: an entry form that adapts to the entry type, with input validation and clear error messages. A teammate built the data-saving side.</li>
+      <li>Attended regular client meetings and updated the screens based on the client's feedback and mock-ups</li>
+      <li>Shared equally in the <strong>UML diagrams</strong>, project documentation and sprint planning on <strong>ZenHub</strong></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>A Design Challenge</h2>
+    <p>The official drug databases contain long, detailed safety information, including a full list of possible side effects. The client was concerned that showing all of it at once could frighten patients and put them off taking their medication. At the same time, the information had to stay honest and easy to find.</p>
+    <p>I designed the drug profile screen around that balance. The main view shows only a short list of the most common side effects, in plain wording. The longer warnings and instructions are grouped under their own headings and collapsed behind a "Read more" toggle, so patients can open them when they want the full detail. I also added links to the official Health Canada and FDA pages for anyone who wants the complete label. I reviewed the design with the client and adjusted it based on the client's feedback.</p>
+  </section>
+
+  <section>
+    <h2>Working Style</h2>
+    <p>Agile team workflow: sprint planning and task tracking in ZenHub, version control on GitHub, and regular meetings with the client where we reviewed progress and adjusted the app based on the client's feedback.</p>
+  </section>
+
+  <section>
+    <h2>Tech Stack</h2>
+    <p class="stack">Flutter · Dart · Supabase · Git &amp; GitHub · ZenHub · UML</p>
+  </section>
+</div>
+</body>
+</html>
