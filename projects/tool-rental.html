@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tool Rental Web App | Rakiba Chowdhury</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Segoe UI", Arial, sans-serif; background: #f7f9f8; color: #1f2d27; line-height: 1.6; }
+  .container { max-width: 800px; margin: 0 auto; padding: 40px 24px; }
+  a.back { color: #1aa36f; text-decoration: none; font-weight: 600; }
+  header { margin: 20px 0 30px; }
+  header h1 { color: #0d3d2e; font-size: 1.8em; margin-bottom: 6px; }
+  header p.meta { color: #6b8f80; font-size: 0.95em; }
+  section { margin-bottom: 32px; }
+  section h2 { color: #0d3d2e; font-size: 1.2em; margin-bottom: 12px; border-bottom: 2px solid #d4e5dc; padding-bottom: 6px; }
+  section p + p { margin-top: 12px; }
+  ul { padding-left: 20px; margin-top: 8px; }
+  li { margin-bottom: 6px; }
+  img { max-width: 100%; border: 1px solid #e0ebe5; border-radius: 8px; margin: 12px 0 4px; }
+  .caption { font-size: 0.85em; color: #6b8f80; margin-bottom: 20px; }
+  .stack { background: white; border: 1px solid #e0ebe5; border-radius: 8px; padding: 14px 18px; font-size: 0.9em; color: #3d5a4d; }
+  .btn { display: inline-block; background: #1aa36f; color: white; text-decoration: none; padding: 10px 18px; border-radius: 6px; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to projects</a>
+
+  <header>
+    <h1>Tool Rental Web App</h1>
+    <p class="meta">Team project · CST8285 Web Programming · Jul–Aug 2025</p>
+  </header>
+
+  <section>
+    <h2>Overview</h2>
+    <p>A dynamic web application for a fictional tool rental company, built by a team of three for a Web Programming course. Customers can browse an inventory of tools, search and filter it, and place, edit and delete rental orders that are stored in a MySQL database.</p>
+  </section>
+
+  <section>
+    <h2>My Role</h2>
+    <p>I focused on the design side of the project: planning how the site should look and work, and turning that plan into HTML and CSS.</p>
+    <ul>
+      <li>Created the <strong>site map</strong>, the <strong>wireframes</strong> and the <strong>functional diagram</strong> before development started, so the team agreed on the pages and flow</li>
+      <li>Wrote the <strong>semantic HTML</strong> structure for the site's pages (header, navigation, main content and footer)</li>
+      <li>Designed and wrote the <strong>CSS</strong>: a single external stylesheet using CSS variables and a responsive layout with media queries</li>
+    </ul>
+    <p>My two teammates built the database and testing, and the JavaScript form validation.</p>
+  </section>
+
+  <section>
+    <h2>What the Team Built</h2>
+    <ul>
+      <li><strong>Inventory:</strong> a tool table with search by name and filters by category and location</li>
+      <li><strong>Rent orders:</strong> create, edit and delete orders, with the total cost calculated from the daily price, quantity and rental dates</li>
+      <li><strong>Form validation:</strong> client-side validation with clear error messages on the login and sign-up forms</li>
+      <li><strong>Other pages:</strong> home page, customer testimonials, terms and privacy, and a contact page</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Design Documents</h2>
+    <p>Before coding, I planned the structure and flow of the site.</p>
+
+    <img src="../assets/images/tool-rental/site-map.png" alt="Site map of the Tool Rental website">
+    <p class="caption">Site map: every page, what it does and how the pages connect.</p>
+
+    <img src="../assets/images/tool-rental/wireframe-home.png" alt="Wireframe of the home page">
+    <p class="caption">Wireframe of the home page layout.</p>
+
+    <img src="../assets/images/tool-rental/functional-diagram.png" alt="Functional diagram showing how the user, browser, HTML/CSS, PHP, database and JavaScript interact">
+    <p class="caption">Functional diagram: how the user, browser, HTML/CSS, PHP, database and JavaScript work together on each page.</p>
+  </section>
+
+  <section>
+    <h2>The Finished Site</h2>
+    <p>The finished pages, running locally with sample data.</p>
+
+    <img src="../assets/images/tool-rental/site-home.png" alt="Home page of the Tool Rental website">
+    <p class="caption">Home page: the layout follows the wireframe, with the heading on the left, the services box in the centre and the image on the right.</p>
+
+    <img src="../assets/images/tool-rental/site-inventory.png" alt="Inventory page filtered to the Power Tools category">
+    <p class="caption">Inventory: search box and category and location filters (filtered to Power Tools here).</p>
+
+    <img src="../assets/images/tool-rental/site-rent-orders.png" alt="Rent Orders page with the order form and the current rentals table">
+    <p class="caption">Rent Orders: the order form and the table of current rentals with edit and delete actions.</p>
+  </section>
+
+  <section>
+    <h2>Tech Stack</h2>
+    <p class="stack">HTML5 · CSS3 · JavaScript · PHP · MySQL · XAMPP · Git &amp; GitHub</p>
+  </section>
+
+  <section>
+    <a class="btn" href="https://github.com/Rakibachowdhury06/tool-rental-app">View source on GitHub</a>
+  </section>
+</div>
+</body>
+</html>
