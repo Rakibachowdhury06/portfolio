@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seattle Weather Dashboard | Rakiba Chowdhury</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Segoe UI", Arial, sans-serif; background: #f7f9f8; color: #1f2d27; line-height: 1.6; }
+  .container { max-width: 800px; margin: 0 auto; padding: 40px 24px; }
+  a.back { color: #1aa36f; text-decoration: none; font-weight: 600; }
+  header { margin: 20px 0 30px; }
+  header h1 { color: #0d3d2e; font-size: 1.8em; margin-bottom: 6px; }
+  header p.meta { color: #6b8f80; font-size: 0.95em; }
+  section { margin-bottom: 32px; }
+  section h2 { color: #0d3d2e; font-size: 1.2em; margin-bottom: 12px; border-bottom: 2px solid #d4e5dc; padding-bottom: 6px; }
+  section p + p { margin-top: 12px; }
+  ul { padding-left: 20px; margin-top: 8px; }
+  li { margin-bottom: 6px; }
+  img { max-width: 100%; border: 1px solid #e0ebe5; border-radius: 8px; margin: 12px 0 4px; }
+  img.phone { max-width: 260px; display: block; }
+  .caption { font-size: 0.85em; color: #6b8f80; margin-bottom: 20px; }
+  .stack { background: white; border: 1px solid #e0ebe5; border-radius: 8px; padding: 14px 18px; font-size: 0.9em; color: #3d5a4d; }
+  .note { background: #eef7f2; border-left: 4px solid #1aa36f; padding: 12px 16px; border-radius: 4px; font-size: 0.92em; margin-top: 12px; }
+  .btn { display: inline-block; background: #1aa36f; color: white; text-decoration: none; padding: 10px 18px; border-radius: 6px; font-weight: 600; margin-right: 8px; margin-bottom: 8px; }
+  .btn.alt { background: white; color: #0d3d2e; border: 1px solid #1aa36f; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to projects</a>
+
+  <header>
+    <h1>Seattle Weather Dashboard</h1>
+    <p class="meta">Personal project · React · Oct 2026</p>
+  </header>
+
+  <section>
+    <p>
+      <a class="btn" href="https://rakibachowdhury06.github.io/weather-dashboard/">Open live demo</a>
+      <a class="btn alt" href="https://github.com/Rakibachowdhury06/weather-dashboard">View code on GitHub</a>
+    </p>
+  </section>
+
+  <section>
+    <h2>Overview</h2>
+    <p>An interactive dashboard for exploring four years of daily weather in Seattle (1,461 days, 2012–2015). Choose a year and a weather type, and the summary tiles, three charts and a data table all update together.</p>
+  </section>
+
+  <section>
+    <h2>Why I Built It</h2>
+    <p>I'm applying for web developer and data analyst roles, and I wanted one project that shows both sides: React for the interface and data analysis for the numbers. I used real public data so every figure can be checked, and I drew the charts in SVG myself, without a chart library, to understand how they work.</p>
+    <p class="note">I built this with an AI coding assistant, then read, tested and changed the code so I can explain how each part works.</p>
+  </section>
+
+  <section>
+    <h2>What It Does</h2>
+    <ul>
+      <li><strong>Filters:</strong> year and weather type in one row; everything below updates to match</li>
+      <li><strong>Summary tiles:</strong> average daily high, total precipitation, days with precipitation and the hottest day, with the change from the previous year when one year is selected</li>
+      <li><strong>Charts:</strong> monthly temperature (line), monthly precipitation (columns) and days by weather type (bars), with hover tooltips and keyboard navigation</li>
+      <li><strong>Table view and CSV export:</strong> every number the charts draw, readable without hovering, plus a download of the selected days</li>
+      <li><strong>Light and dark mode</strong> that follow the system setting, and a layout that works on a phone</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Screenshots</h2>
+    <img src="../assets/images/weather-dashboard/dashboard-light.png" alt="Dashboard in light mode with filters, four summary tiles and three charts">
+    <p class="caption">Light mode: filters, summary tiles, temperature line chart, precipitation columns and weather-type bars.</p>
+
+    <img src="../assets/images/weather-dashboard/dashboard-dark.png" alt="Dashboard in dark mode">
+    <p class="caption">Dark mode: the same dashboard with its own colours checked for contrast and colour-blind safety.</p>
+
+    <img class="phone" src="../assets/images/weather-dashboard/dashboard-mobile.png" alt="Dashboard on a phone-sized screen">
+    <p class="caption">Phone layout: tiles and charts stack into one column.</p>
+  </section>
+
+  <section>
+    <h2>How It's Built</h2>
+    <ul>
+      <li><strong>Data logic in plain functions:</strong> CSV parsing and validation, filtering, monthly averages and totals, and year-over-year change, covered by unit tests</li>
+      <li><strong>React hooks:</strong> loading and error states for the data, <code>useMemo</code> so numbers are recalculated only when filters change, and a custom hook for keyboard and pointer focus on charts</li>
+      <li><strong>Charts from scratch in SVG:</strong> scales, round axis ticks and gaps for months with no matching days (a gap, not a false zero)</li>
+      <li><strong>Accessibility:</strong> a table view for every chart, labelled controls, visible focus and screen-reader announcements</li>
+      <li><strong>Automatic testing and deployment:</strong> every push runs the tests, builds the app and publishes it to GitHub Pages</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>About the Data</h2>
+    <p>Daily weather summaries for Seattle from NOAA, taken from the open-source <em>vega-datasets</em> package (U.S. government data). The weather type (sun, rain, snow and so on) was derived from the original measurements by the dataset's authors, and the dataset is intended for teaching, so treat the numbers as an example rather than an official climate record.</p>
+  </section>
+
+  <section>
+    <h2>Tech Stack</h2>
+    <p class="stack">React 18 · JavaScript · SVG · Vite · Vitest · CSS · GitHub Actions &amp; GitHub Pages</p>
+  </section>
+</div>
+</body>
+</html>
